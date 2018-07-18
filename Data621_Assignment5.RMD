@@ -65,9 +65,9 @@ There are 12795 observations and 16 variables. Each wine has 14 potential predic
 
 Visual Exploration:
 
-Let's dig into our response variables.
+Let's dig into our available variables.
 
-Response Variable AcidIndex - Proprietary method of testing total acidity of wine by using a weighted average.
+AcidIndex - Proprietary method of testing total acidity of wine by using a weighted average.
 
 ```{r}
 with(wine_train, c(summary(AcidIndex), SD=sd(AcidIndex), Skew=skewness(AcidIndex), Kurt=kurtosis(AcidIndex)))
@@ -89,7 +89,7 @@ box_TARGET <- ggplot(wine_train, aes(x=factor(TARGET), AcidIndex)) + geom_boxplo
 grid.arrange(hist, qq_plot, box_plot, box_TARGET, ncol=2)
 ```
 
-Response Variable Alcohol - This variable tells us about the Alcohol content.
+Alcohol - This variable tells us about the Alcohol content.
 
 ```{r}
 with(wine_train, c(summary(Alcohol), SD=sd(Alcohol), Skew=skewness(Alcohol), Kurt=kurtosis(Alcohol)))
@@ -111,7 +111,7 @@ box_TARGET <- ggplot(wine_train, aes(x=factor(TARGET), Alcohol)) + geom_boxplot(
 grid.arrange(hist, qq_plot, box_plot, box_TARGET, ncol=2)
 ```
 
-Response Variable Chlorides - This variable tells us about the Chloride content of wine.
+Chlorides - This variable tells us about the Chloride content of wine.
 
 ```{r}
 with(wine_train, c(summary(Chlorides), SD=sd(Chlorides), Skew=skewness(Chlorides), Kurt=kurtosis(Chlorides)))
@@ -133,7 +133,7 @@ box_TARGET <- ggplot(wine_train, aes(x=factor(TARGET), Chlorides)) + geom_boxplo
 grid.arrange(hist, qq_plot, box_plot, box_TARGET, ncol=2)
 ```
 
-Response Variable CitricAcid - This variable tells us about the Citric Acid Content of wine.
+CitricAcid - This variable tells us about the Citric Acid Content of wine.
 
 ```{r}
 with(wine_train, c(summary(CitricAcid), SD=sd(CitricAcid), Skew=skewness(CitricAcid), Kurt=kurtosis(CitricAcid)))
@@ -155,7 +155,7 @@ box_TARGET <- ggplot(wine_train, aes(x=factor(TARGET), CitricAcid)) + geom_boxpl
 grid.arrange(hist, qq_plot, box_plot, box_TARGET, ncol=2)
 ```
 
-Response Variable Density - This variable tells us about the Density of wine.
+Density - This variable tells us about the Density of wine.
 
 ```{r}
 with(wine_train, c(summary(Density), SD=sd(Density), Skew=skewness(Density), Kurt=kurtosis(Density)))
@@ -176,7 +176,7 @@ box_TARGET <- ggplot(wine_train, aes(x=factor(TARGET), Density)) + geom_boxplot(
 grid.arrange(hist, qq_plot, box_plot, box_TARGET, ncol=2)
 ```
 
-Response Variable FixedAcidity - This variable tells us about the FixedAcidity of wine.
+FixedAcidity - This variable tells us about the FixedAcidity of wine.
 
 ```{r}
 with(wine_train, c(summary(FixedAcidity), SD=sd(FixedAcidity), Skew=skewness(FixedAcidity), Kurt=kurtosis(FixedAcidity)))
@@ -198,7 +198,7 @@ box_TARGET <- ggplot(wine_train, aes(x=factor(TARGET), FixedAcidity)) + geom_box
 grid.arrange(hist, qq_plot, box_plot, box_TARGET, ncol=2)
 ```
 
-Response Variable FreeSulfurDioxide - This variable tells us about the Sulfur Dioxide content of wine.
+FreeSulfurDioxide - This variable tells us about the Sulfur Dioxide content of wine.
 
 ```{r}
 with(wine_train, c(summary(FreeSulfurDioxide), SD=sd(FreeSulfurDioxide), Skew=skewness(FreeSulfurDioxide), Kurt=kurtosis(FreeSulfurDioxide)))
@@ -220,7 +220,7 @@ box_TARGET <- ggplot(wine_train, aes(x=factor(TARGET), FreeSulfurDioxide)) + geo
 grid.arrange(hist, qq_plot, box_plot, box_TARGET, ncol=2)
 ```
 
-Response Variable LabelAppeal - Marketing Score indicating the appeal of label design for consumers. High numbers suggest customers like the label design. Negative numbers suggest customes don't like the design. Many consumers purchase based on the visual appeal of the wine label design. Higher numbers suggest better sales.
+LabelAppeal - Marketing Score indicating the appeal of label design for consumers. High numbers suggest customers like the label design. Negative numbers suggest customes don't like the design. Many consumers purchase based on the visual appeal of the wine label design. Higher numbers suggest better sales.
 
 ```{r}
 with(wine_train, c(summary(LabelAppeal), SD=sd(LabelAppeal), Skew=skewness(LabelAppeal), Kurt=kurtosis(LabelAppeal)))
@@ -242,7 +242,7 @@ box_TARGET <- ggplot(wine_train, aes(x=factor(TARGET), LabelAppeal)) + geom_boxp
 grid.arrange(hist, qq_plot, box_plot, box_TARGET, ncol=2)
 ```
 
-Response Variable ResidualSugar - This variable tells us about the ResidualSugar of wine.
+ResidualSugar - This variable tells us about the ResidualSugar of wine.
 
 ```{r}
 with(wine_train, c(summary(ResidualSugar), SD=sd(ResidualSugar), Skew=skewness(ResidualSugar), Kurt=kurtosis(ResidualSugar)))
@@ -264,7 +264,7 @@ box_TARGET <- ggplot(wine_train, aes(x=factor(TARGET), ResidualSugar)) + geom_bo
 grid.arrange(hist, qq_plot, box_plot, box_TARGET, ncol=2)
 ```
 
-Response Variable STARS - Wine rating by a team of experts. 4 Stars = Excellent, 1 Star = Poor. A high number of stars suggests high sales.
+STARS - Wine rating by a team of experts. 4 Stars = Excellent, 1 Star = Poor. A high number of stars suggests high sales.
 
 ```{r}
 with(wine_train, c(summary(STARS), SD=sd(STARS), Skew=skewness(STARS), Kurt=kurtosis(STARS)))
@@ -286,7 +286,7 @@ box_TARGET <- ggplot(wine_train, aes(x=factor(TARGET), STARS)) + geom_boxplot(fi
 grid.arrange(hist, qq_plot, box_plot, box_TARGET, ncol=2)
 ```
 
-Response Variable Sulphates - This variable tells us about the Sulphates content of wine.
+Sulphates - This variable tells us about the Sulphates content of wine.
 
 ```{r}
 with(wine_train, c(summary(Sulphates), SD=sd(Sulphates), Skew=skewness(Sulphates), Kurt=kurtosis(Sulphates)))
@@ -308,8 +308,7 @@ box_TARGET <- ggplot(wine_train, aes(x=factor(TARGET), Sulphates)) + geom_boxplo
 grid.arrange(hist, qq_plot, box_plot, box_TARGET, ncol=2)
 ```
 
-
-Response Variable TotalSulfurDioxide - This variable tells us about the Total Sulfur Dioxide of Wine.
+TotalSulfurDioxide - This variable tells us about the Total Sulfur Dioxide of Wine.
 
 ```{r}
 with(wine_train, c(summary(TotalSulfurDioxide), SD=sd(TotalSulfurDioxide), Skew=skewness(TotalSulfurDioxide), Kurt=kurtosis(TotalSulfurDioxide)))
@@ -331,7 +330,7 @@ box_TARGET <- ggplot(wine_train, aes(x=factor(TARGET), TotalSulfurDioxide)) + ge
 grid.arrange(hist, qq_plot, box_plot, box_TARGET, ncol=2)
 ```
 
-Response Variable VolatileAcidity - This variable tells us about the VolatileAcidity content of Wine.
+VolatileAcidity - This variable tells us about the VolatileAcidity content of Wine.
 
 ```{r}
 with(wine_train, c(summary(VolatileAcidity), SD=sd(VolatileAcidity), Skew=skewness(VolatileAcidity), Kurt=kurtosis(VolatileAcidity)))
@@ -353,7 +352,7 @@ box_TARGET <- ggplot(wine_train, aes(x=factor(TARGET), VolatileAcidity)) + geom_
 grid.arrange(hist, qq_plot, box_plot, box_TARGET, ncol=2)
 ```
 
-Response Variable pH - This variable tells us about the pH of Wine.
+pH - This variable tells us about the pH of Wine.
 
 ```{r}
 with(wine_train, c(summary(pH), SD=sd(pH), Skew=skewness(pH), Kurt=kurtosis(pH)))
@@ -392,14 +391,143 @@ kable(NA_SUMMARY)
 
 Finding correlations: The correlation plot below shows how variables in the dataset are related to each other. Looking at the plot, we dont see much correlations.
 
-```{r}
-names(wine_train)
-cor(drop_na(wine_train))
-```
+#```{r}
+#names(wine_train)
+#cor(drop_na(wine_train))
+#```
+
+#```{r}
+#pairs.panels(wine_train[1:15]) 
+#``` 
+
+Now we will see the TARGET Variable.
+
+TARGET - Number of Cases Purchased
 
 ```{r}
-pairs.panels(wine_train[1:15]) 
-``` 
+options(width=100)
+round(with(wine_train, c(summary(TARGET), StdD=sd(TARGET), Skew=skewness(TARGET), Kurt=kurtosis(TARGET))),2)
+```
+
+#DATA PREPARATION:
+
+Lets first split the data into training and test.
+
+```{r}
+set.seed(999) 
+sampl = sample.split(wine_train$TARGET, SplitRatio = .80)
+wine_train1 <- subset(wine_train, sampl == TRUE)
+wine_test1 <- subset(wine_train, sampl == FALSE)
+
+summary(wine_train1)
+summary(wine_test1)
+```
+
+We will now use the mice package to impute missing values.
+
+```{r}
+wine_train2 <- mice(wine_train1, m=1, maxit = 5, seed = 42)
+wine_train2 <- complete(wine_train2)
+wine_train2 <- as.data.frame(wine_train2)
+
+wine_test2 <- test <- mice(wine_test1, m=1, maxit = 5, seed = 42)
+wine_test2 <- complete(wine_test2)
+wine_test2 <- as.data.frame(wine_test2)
+```
+
+There is correlation between AcidIndex and TARGET, lets do log transformation on AcidIndex.
+
+```{r}
+wine_train2$AcidIndex <- log(wine_train2$AcidIndex)
+wine_test2$AcidIndex <- log(wine_test2$AcidIndex)
+```
+
+#BUILD MODELS:
+
+1. Poisson model without imputations.
+
+```{r}
+model1 = glm(TARGET ~  ., data=wine_train1, family=poisson)
+summary(model1)
+plot(model1)
+```
+
+2. Poisson model without imputations and only significant variables.
+
+```{r}
+model2 = glm(TARGET ~  .-FixedAcidity-CitricAcid-ResidualSugar-Chlorides-FreeSulfurDioxide-TotalSulfurDioxide-Density-pH-Sulphates-Alcohol, data=wine_train1, family=poisson)
+summary(model2)
+plot(model2)
+```
+
+3. Poisson model with Imputation.
+
+```{r}
+model3 = glm(TARGET ~  ., data=wine_train2, family=poisson)
+summary(model3)
+plot(model3)
+```
+
+4. Poisson model with imputations and only significant variables.
+
+```{r}
+model4 = glm(TARGET ~  .-FixedAcidity-CitricAcid-ResidualSugar-Density-Alcohol, data=wine_train2, family=poisson)
+summary(model4)
+plot(model4)
+```
+
+5. Negative Binomial without imputations:
+
+```{r}
+model5 <- glm.nb(TARGET ~ ., data = wine_train1)
+summary(model5)
+plot(model5)
+```
+
+6. Negative Binomial without imputations and only significant variables:
+
+```{r}
+model6 <- glm.nb(TARGET ~ .-FixedAcidity-CitricAcid-ResidualSugar-Chlorides-FreeSulfurDioxide-TotalSulfurDioxide-Density-pH-Sulphates-Alcohol, data = wine_train1)
+summary(model6)
+plot(model6)
+```
+
+7. Negative Binomial with imputations:
+
+```{r}
+model7 <- glm.nb(TARGET ~ ., data = wine_train2)
+summary(model7)
+plot(model7)
+```
+
+8. Negative Binomial with imputations and only significant variables:
+
+```{r}
+model8 <- glm.nb(TARGET ~ .-FixedAcidity-CitricAcid-ResidualSugar-Density-Alcohol, data = wine_train2)
+summary(model8)
+plot(model8)
+```
+
+9. Linear Model with imputations.
+
+```{r}
+model9 <- lm(TARGET ~ ., data = wine_train2)
+summary(model9)
+plot(model9)
+```
+
+10. Linear Model with imputations and only significant variables.
+
+```{r}
+model10 <- lm(TARGET ~ .-FixedAcidity-CitricAcid-ResidualSugar, data = wine_train2)
+summary(model10)
+plot(model10)
+```
+
+
+
+
+
 
 
  
