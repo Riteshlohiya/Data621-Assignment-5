@@ -9,7 +9,7 @@ output: html_document
 
 In this homework assignment, you will explore, analyze and model a data set containing information on approximately 12,000 commercially available wines. The variables are mostly related to the chemical properties of the wine being sold. The response variable is the number of sample cases of wine that were purchased by wine distribution companies after sampling a wine. These cases would be used to provide tasting samples to restaurants and wine stores around the United States. The more sample cases purchased, the more likely is a wine to be sold at a high end restaurant. A large wine manufacturer is studying the data in order to predict the number of wine cases ordered based upon the wine characteristics. If the wine manufacturer can predict the number of cases, then that manufacturer will be able to adjust their wine offering to maximize sales. Your objective is to build a count regression model to predict the number of cases of wine that will be sold given certain properties of the wine. HINT: Sometimes, the fact that a variable is missing is actually predictive of the target. You can only use the variables given to you (or variables that you derive from the variables provided). Below is a short description of the variables of interest in the data set:
 
-#install.packages('pander')
+#install.packages('corrplot')
 
 ```{r}
 library(readr)
@@ -65,15 +65,7 @@ There are 12795 observations and 16 variables. Each wine has 14 potential predic
 
 Visual Exploration:
 
-Now we will see the missing values in the dataset. For this i have used Amelia package
-
-```{r}
-missmap(wine_train, main = "Missing values vs observed",  color='dodgerblue')
-```
-
-Form the above plot we can see that most of the missing values are for STARS variable. 
-
-Lets now dig into our response variables.
+Let's dig into our response variables.
 
 Response Variable AcidIndex - Proprietary method of testing total acidity of wine by using a weighted average.
 
@@ -382,6 +374,36 @@ box_TARGET <- ggplot(wine_train, aes(x=factor(TARGET), pH)) + geom_boxplot(fill=
 
 grid.arrange(hist, qq_plot, box_plot, box_TARGET, ncol=2)
 ```
+
+Now lets see NA's for all the variables other than STARS.STARS has NAs that is more than 10%.
+
+
+```{r}
+Non_NAs <- sapply(wine_train, function(y) sum(length(which(!is.na(y)))))
+NAs <- sapply(wine_train, function(y) sum(length(which(is.na(y)))))
+NA_Percent <- NAs / (NAs + Non_NAs)
+
+NA_SUMMARY <- data.frame(Non_NAs,NAs,NA_Percent)
+
+missmap(wine_train, main = "Missing Values")
+
+kable(NA_SUMMARY)
+```
+
+Finding correlations: The correlation plot below shows how variables in the dataset are related to each other. Looking at the plot, we dont see much correlations.
+
+```{r}
+names(wine_train)
+cor(drop_na(wine_train))
+```
+
+```{r}
+pairs.panels(wine_train[1:15]) 
+``` 
+
+
+ 
+
 
 
 
