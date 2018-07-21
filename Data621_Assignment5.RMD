@@ -452,7 +452,7 @@ grid.arrange(hist, qq_plot, box_plot, box_TARGET, ncol=2)
 ```{r}
 model2 = glm(TARGET ~  .-FixedAcidity-CitricAcid-ResidualSugar-Chlorides-FreeSulfurDioxide-TotalSulfurDioxide-Density-pH-Sulphates-Alcohol, data=wine_train1, family=poisson)
 summary(model2)
-plot(model2)
+plot(model2) 
 ```
 
 3. Poisson model with Imputation.
